@@ -12,10 +12,10 @@ This C# Library allows users to get METAR and TAF of the desidered airport by us
 
 Call the APIs by doing so:
 ```cs
-public static async Task<string> GetStationMetarRaw(string icao)
-public static async Task<string> GetStationMetar(string icao)
-public static async Task<string> GetStationTafRaw(string icao)
-public static async Task<string> GetStationTaf(string icao)
+public static async Task<string> GetStationMetarRaw(string icao) {}
+public static async Task<string> GetStationMetar(string icao) {}
+public static async Task<string> GetStationTafRaw(string icao) {}
+public static async Task<string> GetStationTaf(string icao) {}
 ```
 
 To avoid thread blocking I recommend to use async methods.
