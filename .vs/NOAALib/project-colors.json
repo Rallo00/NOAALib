@@ -25,7 +25,17 @@
       "ProjectGuid": "90f0457e-9f78-4e32-9cc4-05c50ae57a12",
       "DisplayName": "NOAALibTest",
       "ColorIndex": 3
+    },
+    "26a1b0c2-31a6-4f41-98ee-a80d0a048a30": {
+      "ProjectGuid": "26a1b0c2-31a6-4f41-98ee-a80d0a048a30",
+      "DisplayName": "NOAALibTest",
+      "ColorIndex": 4
+    },
+    "60c180ca-2681-4e51-b8dd-fc0942218966": {
+      "ProjectGuid": "60c180ca-2681-4e51-b8dd-fc0942218966",
+      "DisplayName": "NOAALib",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 6
 }
