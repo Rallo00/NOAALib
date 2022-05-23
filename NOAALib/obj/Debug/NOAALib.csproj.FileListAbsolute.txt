@@ -1,0 +1,9 @@
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALib\bin\Debug\NOAALib.dll
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALib\bin\Debug\NOAALib.pdb
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALib\bin\Debug\Newtonsoft.Json.dll
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALib\bin\Debug\Newtonsoft.Json.xml
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALib\obj\Debug\NOAALib.csproj.AssemblyReference.cache
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALib\obj\Debug\NOAALib.csproj.CoreCompileInputs.cache
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALib\obj\Debug\NOAALib.csproj.CopyComplete
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALib\obj\Debug\NOAALib.dll
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALib\obj\Debug\NOAALib.pdb

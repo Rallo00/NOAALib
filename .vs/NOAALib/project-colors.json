@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b9f5b562-a178-40dc-9ed5-0dcdbb1784e4": {
+      "ProjectGuid": "b9f5b562-a178-40dc-9ed5-0dcdbb1784e4",
+      "DisplayName": "NOAALib",
+      "ColorIndex": 0
+    },
+    "dfe774a2-1986-4732-a015-2b88fc12aee0": {
+      "ProjectGuid": "dfe774a2-1986-4732-a015-2b88fc12aee0",
+      "DisplayName": "NOAALib_Test",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "File esterni",
+      "ColorIndex": -1
+    },
+    "f14801e7-bb8a-4c25-a6a2-e18d097c7e73": {
+      "ProjectGuid": "f14801e7-bb8a-4c25-a6a2-e18d097c7e73",
+      "DisplayName": "NOAALibTest",
+      "ColorIndex": 2
+    },
+    "90f0457e-9f78-4e32-9cc4-05c50ae57a12": {
+      "ProjectGuid": "90f0457e-9f78-4e32-9cc4-05c50ae57a12",
+      "DisplayName": "NOAALibTest",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

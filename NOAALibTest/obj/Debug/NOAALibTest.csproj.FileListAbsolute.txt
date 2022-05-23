@@ -1,0 +1,13 @@
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\bin\Debug\NOAALibTest.exe.config
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\bin\Debug\NOAALibTest.exe
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\bin\Debug\NOAALibTest.pdb
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\bin\Debug\NOAALib.dll
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\bin\Debug\Newtonsoft.Json.dll
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\bin\Debug\NOAALib.pdb
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\bin\Debug\Newtonsoft.Json.xml
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\obj\Debug\NOAALibTest.csproj.AssemblyReference.cache
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\obj\Debug\NOAALibTest.csproj.SuggestedBindingRedirects.cache
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\obj\Debug\NOAALibTest.csproj.CoreCompileInputs.cache
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\obj\Debug\NOAALibTest.csproj.CopyComplete
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\obj\Debug\NOAALibTest.exe
+D:\Utilità e Restore\Repository-GitHub\NOAALib\NOAALibTest\obj\Debug\NOAALibTest.pdb
