@@ -10,26 +10,31 @@ public class NOAALib
 {
     private static string URL_METAR = "https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&stationString=";
     private static string URL_TAF = "https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=tafs&requestType=retrieve&format=xml&stationString=";
-    public static async Task<string> GetStationMetarRaw(string icao)
+    public static async Task<string> GetAirportMetarRawAsync(string icao)
     {
         return await Http_GetRequest(URL_METAR + icao + "&hoursBeforeNow=1");
     }
-    public static async Task<string> GetStationMetar(string icao)
+    public static async Task<string> GetAirportMetarAsync(string icao)
     {
         string jsonRaw = await Http_GetRequest(URL_METAR + icao + "&hoursBeforeNow=1");
         METAR metar = Newtonsoft.Json.JsonConvert.DeserializeObject<METAR>(jsonRaw);
         return metar.raw_text;
     }
-    public static async Task<string> GetStationTafRaw(string icao)
+    public static async Task<string> GetAirportTafRawAsync(string icao)
     {
         return await Http_GetRequest(URL_TAF + icao + "&hoursBeforeNow=1");
     }
-    public static async Task<string> GetStationTaf(string icao)
+    public static async Task<string> GetAirportTafAsync(string icao)
     {
         string jsonRaw = await Http_GetRequest(URL_TAF + icao + "&hoursBeforeNow=1");
         METAR metar = Newtonsoft.Json.JsonConvert.DeserializeObject<METAR>(jsonRaw);
         return metar.raw_text;
     }
+    private static string GetAirportMetarRaw(string icao) { return GetAirportMetarRawAsync(icao).Result; }
+    private static string GetAirportMetar(string icao) { return GetAirportMetarAsync(icao).Result; }
+    private static string GetAirportTafRaw(string icao) { return GetAirportTafRawAsync(icao).Result; }
+    private static string GetAirportTaf(string icao) { return GetAirportTafAsync(icao).Result; }
+
     private static async Task<string> Http_GetRequest(string url)
     {
         var baseAddress = new Uri("https://avwx.rest/api/");
@@ -51,6 +56,7 @@ public class NOAALib
             }
         }
     }
+
     public struct METAR
     {
         public string raw_text;

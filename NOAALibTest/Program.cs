@@ -25,11 +25,11 @@ namespace NOAALibTest
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(">> METAR RESULT");
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine(NOAALib.GetStationMetar(ICAO_STATION).Result);
+                Console.WriteLine(NOAALib.GetAirportMetarAsync(ICAO_STATION).Result);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(">> TAF RESULT");
                 Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine(NOAALib.GetStationTaf(ICAO_STATION).Result);
+                Console.WriteLine(NOAALib.GetAirportTafAsync(ICAO_STATION).Result);
 
             }
 
