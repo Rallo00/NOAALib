@@ -8,32 +8,74 @@ using Newtonsoft.Json;
 
 public class NOAALib
 {
-    private static string URL_METAR = "https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=metars&requestType=retrieve&format=xml&stationString=";
-    private static string URL_TAF = "https://aviationweather.gov/adds/dataserver_current/httpparam?dataSource=tafs&requestType=retrieve&format=xml&stationString=";
-    public static async Task<string> GetAirportMetarRawAsync(string icao)
-    {
-        return await Http_GetRequest(URL_METAR + icao + "&hoursBeforeNow=1");
-    }
+    private static string URL_METAR = "https://aviationweather.gov/api/data/metar?ids=";
+    private static string URL_TAF = "https://aviationweather.gov/api/data/taf?ids=";
+    /// <summary>
+    /// Obtain RAW text METAR from ICAO station
+    /// </summary>
+    /// <param name="icao">ICAO code of station</param>
+    /// <returns>String containing raw string METAR</returns>
     public static async Task<string> GetAirportMetarAsync(string icao)
     {
-        string jsonRaw = await Http_GetRequest(URL_METAR + icao + "&hoursBeforeNow=1");
-        METAR metar = Newtonsoft.Json.JsonConvert.DeserializeObject<METAR>(jsonRaw);
-        return metar.raw_text;
+        return await Http_GetRequest(URL_METAR + icao + "&format=raw&taf=false&hours=0");
     }
-    public static async Task<string> GetAirportTafRawAsync(string icao)
+    /// <summary>
+    /// Obtain JSON raw text METAR from ICAO station
+    /// </summary>
+    /// <param name="icao">ICAO code of station</param>
+    /// <returns>String JSON coded of station METAR</returns>
+    public static async Task<string> GetAirportMetarJsonAsync(string icao)
     {
-        return await Http_GetRequest(URL_TAF + icao + "&hoursBeforeNow=1");
+        string jsonRaw = await Http_GetRequest(URL_METAR + icao + "&format=json&taf=false&hours=0");
+        return jsonRaw;
     }
+    /// <summary>
+    /// Obtain XML raw text METAR from ICAO station
+    /// </summary>
+    /// <param name="icao">ICAO code of station</param>
+    /// <returns>String XML coded of station METAR</returns>
+    public static async Task<string> GetAirportMetarXmlAsync(string icao)
+    {
+        string xmlRaw = await Http_GetRequest(URL_METAR + icao + "&format=xml&taf=false&hours=0");
+        return xmlRaw;
+    }
+
+    /// <summary>
+    /// Obtain RAW text TAF from ICAO station
+    /// </summary>
+    /// <param name="icao">ICAO code of station</param>
+    /// <returns>String containing raw string TAF</returns>
     public static async Task<string> GetAirportTafAsync(string icao)
     {
-        string jsonRaw = await Http_GetRequest(URL_TAF + icao + "&hoursBeforeNow=1");
-        METAR metar = Newtonsoft.Json.JsonConvert.DeserializeObject<METAR>(jsonRaw);
-        return metar.raw_text;
+        return await Http_GetRequest(URL_TAF + icao + "&format=raw&taf=false&hours=0");
     }
-    private static string GetAirportMetarRaw(string icao) { return GetAirportMetarRawAsync(icao).Result; }
+    /// <summary>
+    /// Obtain JSON raw text TAF from ICAO station
+    /// </summary>
+    /// <param name="icao">ICAO code of station</param>
+    /// <returns>String JSON coded of station TAF</returns>
+    public static async Task<string> GetAirportTafJsonAsync(string icao)
+    {
+        string jsonRaw = await Http_GetRequest(URL_TAF + icao + "&format=json&taf=false&hours=0");
+        return jsonRaw;
+    }
+    /// <summary>
+    /// Obtain XML raw text TAF from ICAO station
+    /// </summary>
+    /// <param name="icao">ICAO code of station</param>
+    /// <returns>String XML coded of station TAF</returns>
+    public static async Task<string> GetAirportTafXmlAsync(string icao)
+    {
+        string xmlRaw = await Http_GetRequest(URL_TAF + icao + "&format=xml&taf=false&hours=0");
+        return xmlRaw;
+    }
+
     private static string GetAirportMetar(string icao) { return GetAirportMetarAsync(icao).Result; }
-    private static string GetAirportTafRaw(string icao) { return GetAirportTafRawAsync(icao).Result; }
+    private static string GetAirportMetarJson(string icao) { return GetAirportMetarJsonAsync(icao).Result; }
+    private static string GetAirportMetarXml(string icao) { return GetAirportMetarXmlAsync(icao).Result; }
     private static string GetAirportTaf(string icao) { return GetAirportTafAsync(icao).Result; }
+    private static string GetAirportTafJson(string icao) { return GetAirportTafJsonAsync(icao).Result; }
+    private static string GetAirportTafXml(string icao) { return GetAirportTafXmlAsync(icao).Result; }
 
     private static async Task<string> Http_GetRequest(string url)
     {
@@ -43,22 +85,8 @@ public class NOAALib
         {
             using (var response = await httpClient.GetAsync(url))
             {
-                string xmlRaw = await response.Content.ReadAsStringAsync();
-                //Converting XML to JSON
-                XmlDocument doc = new XmlDocument();
-                doc.LoadXml(xmlRaw);
-                string jsonRaw = JsonConvert.SerializeXmlNode(doc);
-                //Cleaning up useless xml data
-                jsonRaw = "{" + jsonRaw.Substring(jsonRaw.IndexOf("\"raw_text\":\""));
-                string[] results = jsonRaw.Split(',');
-                jsonRaw = results[0] + "}";
-                return jsonRaw;
+                return await response.Content.ReadAsStringAsync();
             }
         }
-    }
-
-    public struct METAR
-    {
-        public string raw_text;
     }
 }
